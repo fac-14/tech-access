@@ -22,3 +22,14 @@ describe('Test error route', () => {
     });
   });
 });
+
+describe('Test error route', () => {
+  test('It should respond with 500 to GET method', (done) => {
+    supertest(app)
+      .get('/error')
+      .then((response) => {
+        expect(response.statusCode).toBe(500);
+        done();
+    });
+  });
+});

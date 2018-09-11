@@ -5,3 +5,7 @@ exports.client = (req, res) => {
 exports.server = (req, res) => {
   res.status(500).send('server no good mate')
 };
+
+exports.get = (err, req, res, next) => {
+  res.status(500).send("error")
+}

@@ -4,8 +4,9 @@
   "description": "Tech access project for weeks 10-12 of FAC",
   "main": "index.js",
   "scripts": {
-    "test": "jest src/tests --coverage",
-    "start": "nodemon src/index.js"
+    "test": "NODE_ENV=test jest --coverage",
+    "start": "nodemon src/index.js",
+    "report-coverage": "codecov"
   },
   "repository": {
     "type": "git",
@@ -18,6 +19,7 @@
   },
   "homepage": "https://github.com/fac-14/tech-access#readme",
   "devDependencies": {
+    "codecov": "^3.1.0",
     "eslint": "^5.5.0",
     "eslint-config-google": "^0.10.0",
     "jest": "^23.6.0",
