@@ -55,7 +55,13 @@ typings/
 .yarn-integrity
 
 # dotenv environment variables file
-.env
+*.env
 
 # next.js build output
 .next
+
+# mac stuff
+.DS_Store
+
+# yamls
+*.yml
