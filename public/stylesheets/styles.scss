@@ -1,0 +1,39 @@
+// IMPORTS
+
+@import 'o-grid/main';
+@import url('https://fonts.googleapis.com/css?family=Montserrat:900|Source+Sans+Pro');
+
+// NAME VARIABLES
+
+$heading-font: 'Montserrat', sans-serif;
+$body-font: 'Source Sans Pro', sans-serif;
+$primary-text-colour: #222;
+$heading-text-colour: #444;
+$bold-font: 900;
+$regular-font: 400;
+$heading-1: 5.063em;
+$heading-2: 3.375em;
+$heading-3: 2.25em;
+$base-font-size: 1em;
+$smaller-font-size: 0.667em;
+$larger-font-size: 1.5em;
+$round-image: 50%;
+
+// TAG STYLES
+
+img {
+    border: {
+        radius: $round-image;
+    }
+}
+
+// IDS
+
+#test-container {
+    @include oGridContainer();
+}
+
+#test-row {
+    @include oGridRow();
+    @include oGridCenter;
+}
