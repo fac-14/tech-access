@@ -1,3 +1,3 @@
 exports.get = (req, res) => {
-  res.send('Hello there! You have a server');
+  res.render('home', {activePage:{home: true}})
 }
