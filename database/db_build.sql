@@ -12,8 +12,8 @@ CREATE TABLE resource (
   link TEXT NOT NULL,
   resource_description TEXT NOT NULL,
   resource_type e_resource_type ,
-  country VARCHAR(100) SET DEFAULT NULL,
-  city VARCHAR(100) SET DEFAULT NULL
+  country VARCHAR(100)  DEFAULT NULL,
+  city VARCHAR(100)  DEFAULT NULL
 
 );
 
@@ -22,8 +22,8 @@ INSERT INTO resource (resource_name, link, resource_description, resource_type, 
 ('Founders and Coders meetup', 'https://www.meetup.com/founderscoders/','Founders & Coders runs a full-time no-fee coding bootcamp. We run meetups for the general public, but we run even more meetups and workshops for applicants to our programme. ', 'meetup', 'UK', 'london' ), 
 ('Tania Rascia', 'https://www.taniarascia.com/how-i-made-a-career-change-into-web-development/', 'I made a career change into web development in 2015. Before that, I worked as a chef.', 'article', NULL, NULL),
 ('Free code camp: stories from 300 developers who got their first tech job in their 30s 40s and 50s', 'https://medium.freecodecamp.org/stories-from-300-developers-who-got-their-first-tech-job-in-their-30s-40s-and-50s-64306eb6bb27', 'people of all ages who are worried that they’re “too old” to learn to code and get hired as a developer', 'article', NULL, NULL),
-('Free Code Camp', 'https://www.freecodecamp.org/','online course', 'Our mission: to help people learn to code for free. We accomplish this by creating thousands of videos, articles, and interactive coding lessons - all freely available to the public. We also have thousands of freeCodeCamp study groups around the world.', 'online course', NULL, NULL );
-
+('Free Code Camp', 'https://www.freecodecamp.org/', 'Our mission: to help people learn to code for free. We accomplish this by creating thousands of videos, articles, and interactive coding lessons - all freely available to the public. We also have thousands of freeCodeCamp study groups around the world.', 'online course', NULL, NULL );
+ 
 
 CREATE TYPE e_demographic_tag_name AS ENUM ('age', 'ethnicity', 'disability', 'mental health', 'contacts in industry', 'caring responsibilities', 'education', 'socioeconomic', 'language', 'gender', 'sexuality', 'refugee', 'other');
 
@@ -33,7 +33,7 @@ CREATE TABLE demographic_tag (
   demographic_description TEXT 
   );
 
-INSERT INTO demographic_tag (e_demographic_tag_name, demographic_description)
+INSERT INTO demographic_tag (tag_name, demographic_description) VALUES
 ('age', 'age'), /* 1 */
 ('ethnicity', 'ethnicity'), /* 2 */
 ('disability', 'disability'), /* 3 */
@@ -54,9 +54,9 @@ CREATE TABLE demographic_resource_link(
   resource_id INTEGER REFERENCES resource(id) NOT NULL,
   demographic_tag_id INTEGER REFERENCES demographic_tag(id) NOT NULL,
   relevance e_relevance
-)
+);
 
-INSERT INTO demographic_resource_link (resource_id, demographic_tag_id, relevance)
+INSERT INTO demographic_resource_link (resource_id, demographic_tag_id, relevance) VALUES
 (1, 1, 'direct'),
 (1, 2, 'direct'),
 (1, 3, 'indirect'),
@@ -94,14 +94,7 @@ INSERT INTO demographic_resource_link (resource_id, demographic_tag_id, relevanc
 (5, 9, 'indirect'),
 (5, 10, 'indirect'),
 (5, 11, 'indirect'),
-(5, 12, 'indirect'),
-
-
-
+(5, 12, 'indirect');
 
 
 COMMIT;
-
-
-
-
