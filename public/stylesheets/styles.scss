@@ -1,6 +1,5 @@
 // IMPORTS
 
-@import 'o-grid/main';
 @import url('https://fonts.googleapis.com/css?family=Montserrat:900|Source+Sans+Pro');
 
 // NAME VARIABLES
@@ -25,15 +24,4 @@ img {
     border: {
         radius: $round-image;
     }
-}
-
-// IDS
-
-#test-container {
-    @include oGridContainer();
-}
-
-#test-row {
-    @include oGridRow();
-    @include oGridCenter;
 }
