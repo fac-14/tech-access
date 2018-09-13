@@ -1,0 +1,20 @@
+{
+  "name": "stylesheets",
+  "homepage": "https://github.com/fac-14/tech-access",
+  "authors": [
+    "Kate Beard <asouthernbellein@gmail.com>"
+  ],
+  "description": "",
+  "main": "main.scss",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "o-grid": "^4.4.3"
+  }
+}
