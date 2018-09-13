@@ -1,8 +1,11 @@
 // IMPORTS
 
+@import 'bower_components/o-grid/main';
 @import url('https://fonts.googleapis.com/css?family=Montserrat:900|Source+Sans+Pro');
 
 // NAME VARIABLES
+
+$o-grid-is-silent: false;
 
 $heading-font: 'Montserrat', sans-serif;
 $body-font: 'Source Sans Pro', sans-serif;
@@ -17,6 +20,23 @@ $base-font-size: 1em;
 $smaller-font-size: 0.667em;
 $larger-font-size: 1.5em;
 $round-image: 50%;
+
+// CLASSES
+
+.centered {
+    @include oGridCenter;
+    @include oGridColspan(6);
+}
+
+// IDS
+
+#test-container {
+    @include oGridContainer();
+}
+
+#test-row {
+    @include oGridRow();
+}
 
 // TAG STYLES
 
