@@ -65,3 +65,8 @@ typings/
 
 # yamls
 *.yml
+
+# sass cache
+
+/.sass-cache
+.sass-cache
