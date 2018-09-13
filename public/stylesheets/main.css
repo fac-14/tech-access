@@ -1,0 +1,86 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat:900|Source+Sans+Pro");
+.centered {
+  margin-left: auto;
+  margin-right: auto;
+  float: none;
+  position: relative;
+  float: left;
+  flex: 1 1 0%;
+  /*autoprefixer: off*/
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding-left: 10px;
+  display: block;
+  flex-basis: 50%;
+  min-width: 50%;
+  max-width: 50%;
+  width: 50%; }
+  @media \0screen {
+    .centered {
+      min-width: 0 !important; } }
+  @media (min-width: 46.25em) {
+    .centered {
+      padding-left: 20px; } }
+  @media \0screen {
+    .centered {
+      padding-left: 20px; } }
+
+#test-container {
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  min-width: 240px;
+  max-width: 1220px;
+  /*autoprefixer: off*/
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  max-width: 1220px;
+  padding-left: 10px;
+  padding-right: 10px; }
+  @media (min-width: 46.25em) {
+    #test-container {
+      padding-left: 20px;
+      padding-right: 20px; } }
+  @media (min-width: 46.25em) {
+    .o-grid-snappy #test-container, #test-container--snappy {
+      max-width: 740px; } }
+  @media (min-width: 61.25em) {
+    .o-grid-snappy #test-container, #test-container--snappy {
+      max-width: 980px; } }
+  @media (min-width: 76.25em) {
+    .o-grid-snappy #test-container, #test-container--snappy {
+      max-width: 1220px; } }
+  @media \0screen {
+    #test-container {
+      padding-left: 20px;
+      padding-right: 20px;
+      width: 980px; } }
+
+#test-row {
+  clear: both;
+  flex-wrap: wrap;
+  display: flex;
+  margin-left: -10px;
+  zoom: 1; }
+  @media print {
+    #test-row {
+      display: inherit; } }
+  @media (min-width: 46.25em) {
+    #test-row {
+      margin-left: -20px; } }
+  @media \0screen {
+    #test-row {
+      margin-left: -20px; } }
+  #test-row:before, #test-row:after {
+    content: '';
+    display: table;
+    display: flex; }
+  #test-row:after {
+    clear: both; }
+
+img {
+  border-radius: 50%; }
+
+/*# sourceMappingURL=main.css.map */
