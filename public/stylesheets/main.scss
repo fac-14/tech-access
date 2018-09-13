@@ -1,16 +1,21 @@
+// RESET
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
 // IMPORTS
 
 @import 'bower_components/o-grid/main';
+@import '../../node_modules/govuk-frontend/components/checkboxes/checkboxes';
 @import url('https://fonts.googleapis.com/css?family=Montserrat:900|Source+Sans+Pro');
 
-// NAME VARIABLES
-
-$o-grid-is-silent: false;
+// FONT VARIABLES
 
 $heading-font: 'Montserrat', sans-serif;
 $body-font: 'Source Sans Pro', sans-serif;
-$primary-text-colour: #222;
-$heading-text-colour: #444;
 $bold-font: 900;
 $regular-font: 400;
 $heading-1: 5.063em;
@@ -19,23 +24,109 @@ $heading-3: 2.25em;
 $base-font-size: 1em;
 $smaller-font-size: 0.667em;
 $larger-font-size: 1.5em;
+
+// COLOR VARIABLES
+
+$primary-text-colour: #222;
+$heading-text-colour: #444;
+$primary-bg-colour: #8FA3AD;
+$primary-bg-colour-dark: #61747E;
+$primary-bg-colour-light: #BFD4DF;
+$accent-colour: #FDC925;
+$accent-colour-light: #FFFF81;
+$accent-colour-dark: #C8A415;
+
+// OTHER VARIABLES
+
+$o-grid-is-silent: false;
+
 $round-image: 50%;
+$small-image: 200px;
+
+// MIX-INS
+
+// @mixin $property {
+//     -webkit-transform: $property;
+//        -moz-transform: $property;
+//         -ms-transform: $property;
+//          -o-transform: $property;
+//             transform: $property;
+//   }
 
 // CLASSES
 
-.centered {
+.full-viewport {
+    min-height: 100vh;
+    width: 100vw;
+}
+
+.full-height {
+    height: calc(100vh - (4 * #{$heading-1}));
+}
+
+.fixed-height-double-h1 {
+    height: 2 * $heading-1;
+}
+
+.flex-even-spacing {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.primary-background {
+    background: $primary-bg-colour;
+}
+
+.secondary-background {
+    background: $primary-bg-colour-light;
+}
+
+.centered-column {
     @include oGridCenter;
-    @include oGridColspan(6);
+    @include oGridColspan((default: 12, M: 8, L: 6));
+}
+
+.centered-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-right: 10px;
+}
+
+.eight-padding {
+    padding: 8px;
+}
+
+.sixteen-padding {
+    padding: 16px;
+}
+
+.thirtytwo-padding {
+    padding: 32px;
 }
 
 // IDS
 
-#test-container {
-    @include oGridContainer();
+// #test-container {
+//     @include oGridContainer();
+// }
+
+.grid-row {
+    @include oGridRow();
 }
 
-#test-row {
-    @include oGridRow();
+// BUTTON STYLES
+
+.big-btn {
+    width: 50%;
+    height: 2 * $heading-2;
+}
+
+// FORM STYLES
+
+form {
+    width: 100%;
 }
 
 // TAG STYLES
@@ -43,5 +134,26 @@ $round-image: 50%;
 img {
     border: {
         radius: $round-image;
+    }
+    width: $small-image;
+    height: $small-image;
+    max-width: 90%;
+}
+
+// Animation/transformation
+.fade-in {
+    opacity: 1;
+    animation-name: fadeInOpacity;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-in;
+    animation-duration: 1s;
+}
+
+@keyframes fadeInOpacity {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opactiy: 1;
     }
 }
