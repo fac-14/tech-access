@@ -1,8 +1,12 @@
 BEGIN;
 
 DROP TABLE IF EXISTS resource CASCADE;
-DROP TABLE IF EXISTS tag_name CASCADE;
-DROP TABLE IF EXISTS tag_resource CASCADE;
+DROP TABLE IF EXISTS demographic_tag CASCADE;
+DROP TABLE IF EXISTS demographic_resource_link CASCADE;
+
+DROP TYPE IF EXISTS e_resource_type CASCADE;
+DROP TYPE IF EXISTS e_demographic_tag_name CASCADE;
+DROP TYPE IF EXISTS e_relevance CASCADE;
 
 CREATE TYPE e_resource_type AS ENUM ('meetup', 'online course', 'article', 'classroom course' );
 
@@ -11,9 +15,9 @@ CREATE TABLE resource (
   resource_name TEXT NOT NULL,
   link TEXT NOT NULL,
   resource_description TEXT NOT NULL,
-  resource_type e_resource_type ,
-  country VARCHAR(100)  DEFAULT NULL,
-  city VARCHAR(100)  DEFAULT NULL
+  resource_type e_resource_type,
+  country VARCHAR(100) DEFAULT NULL,
+  city VARCHAR(100) DEFAULT NULL
 
 );
 
