@@ -33,3 +33,36 @@ describe('Test error route', () => {
     });
   });
 });
+
+describe('Test background route', () => {
+  test('It should respond with 200 to GET method', (done) => {
+    supertest(app)
+      .get('/background')
+      .then((response) => {
+        expect(response.statusCode).toBe(200);
+        done();
+    });
+  });
+});
+
+describe('Test resources route', () => {
+  test('It should respond with 200 to GET method', (done) => {
+    supertest(app)
+      .get('/resources')
+      .then((response) => {
+        expect(response.statusCode).toBe(200);
+        done();
+    });
+  });
+});
+
+describe('Test welcome route', () => {
+  test('It should respond with 200 to GET method', (done) => {
+    supertest(app)
+      .get('/welcome')
+      .then((response) => {
+        expect(response.statusCode).toBe(200);
+        done();
+    });
+  });
+});
