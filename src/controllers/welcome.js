@@ -1,3 +1,7 @@
 exports.get = (req, res) => {
-  res.render('welcome');
+  res.render('welcome',
+    {
+      progressamt: '20',
+      title: 'Tech Access App'
+    });
 }

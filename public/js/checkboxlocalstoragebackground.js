@@ -9,7 +9,7 @@ checkboxes.forEach(function (i) {
 
 function clickFunc() {
   if(this.checked){
-    sessionStorage.setItem(this.value, this.value);
+    sessionStorage.setItem(this.value + '-background', this.value);
   } else {
     if(sessionStorage.hasOwnProperty(this.value)){
       sessionStorage.removeItem(this.value);

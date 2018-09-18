@@ -473,10 +473,10 @@
   padding: 7px 10px;
   border: 2px solid transparent;
   border-radius: 0;
-  color: #ffffff;
-  background-color: #00823b;
-  -webkit-box-shadow: 0 2px 0 #003618;
-  box-shadow: 0 2px 0 #003618;
+  color: #0b0c0c;
+  background-color: #FFFF81;
+  -webkit-box-shadow: 0 2px 0 #ffff35;
+  box-shadow: 0 2px 0 #ffff35;
   text-align: center;
   vertical-align: top;
   cursor: pointer;
@@ -503,13 +503,13 @@
     .govuk-button {
       width: auto; } }
   .govuk-button:link, .govuk-button:visited, .govuk-button:active, .govuk-button:hover {
-    color: #ffffff;
+    color: #0b0c0c;
     text-decoration: none; }
   .govuk-button::-moz-focus-inner {
     padding: 0;
     border: 0; }
   .govuk-button:hover, .govuk-button:focus {
-    background-color: #00692f; }
+    background-color: #ffff68; }
   .govuk-button:active {
     top: 2px;
     -webkit-box-shadow: none;
@@ -530,11 +530,11 @@
 .govuk-button[disabled="disabled"],
 .govuk-button[disabled] {
   opacity: 0.5;
-  background: #00823b; }
+  background: #FFFF81; }
   .govuk-button--disabled:hover,
   .govuk-button[disabled="disabled"]:hover,
   .govuk-button[disabled]:hover {
-    background-color: #00823b;
+    background-color: #FFFF81;
     cursor: default; }
   .govuk-button--disabled:focus,
   .govuk-button[disabled="disabled"]:focus,
@@ -544,8 +544,8 @@
   .govuk-button[disabled="disabled"]:active,
   .govuk-button[disabled]:active {
     top: 0;
-    -webkit-box-shadow: 0 2px 0 #003618;
-    box-shadow: 0 2px 0 #003618; }
+    -webkit-box-shadow: 0 2px 0 #ffff35;
+    box-shadow: 0 2px 0 #ffff35; }
 
 .govuk-button--start {
   font-weight: 700;
@@ -591,20 +591,47 @@ body {
   font-family: "Source Sans Pro", sans-serif;
   color: #222;
   font-weight: 400;
-  font-size: 1em; }
+  font-size: 1.5rem; }
 
 h1 {
-  font-size: 3.375em; }
+  font-size: 3.375rem; }
+
+progress[value] {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-apperance: none;
+  width: 100%;
+  height: 100%; }
+
+progress[value]::-webkit-progress-bar {
+  background: #BFD4DF;
+  box-shadow: 0 2px 5px #8FA3AD inset; }
+
+progress[value]::-webkit-progress-value {
+  background-color: #FDC925; }
+
+progress {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-apperance: none;
+  width: 100%;
+  height: 100%;
+  background: #BFD4DF;
+  box-shadow: 0 2px 5px #8FA3AD inset; }
+
+progress[value]::-moz-progress-bar {
+  background-color: #FDC925;
+  box-shadow: 0 2px 5px #8FA3AD inset; }
 
 .full-viewport {
-  min-height: 100vh;
+  min-height: 95vh;
   width: 100vw; }
 
 .full-height {
-  height: calc(100vh - (4 * 3.375em)); }
+  height: calc(100vh - (4 * 3.375rem)); }
 
 .fixed-height-double-h1 {
-  height: 6.75em; }
+  height: 6.75rem; }
 
 .flex-even-spacing {
   display: flex;
@@ -670,6 +697,11 @@ h1 {
   justify-content: center;
   padding-right: 10px; }
 
+.centered-content-no-padding {
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+
 .eight-padding {
   padding: 8px; }
 
@@ -678,6 +710,14 @@ h1 {
 
 .thirtytwo-padding {
   padding: 32px; }
+
+.progressbar {
+  position: fixed;
+  width: 100%;
+  height: 5%;
+  left: 0;
+  bottom: 0;
+  background: white; }
 
 .grid-row {
   clear: both;
@@ -703,15 +743,14 @@ h1 {
 
 .big-btn {
   width: 50%;
-  height: 4.5em; }
+  height: 4.5rem; }
 
 form {
   width: 100%; }
 
 img {
   border-radius: 50%;
-  width: 200px;
-  height: 200px;
+  width: 75%;
   max-width: 90%; }
 
 .fade-in {
