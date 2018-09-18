@@ -11,9 +11,9 @@ DROP TYPE IF EXISTS e_relevance CASCADE;
 CREATE TYPE e_resource_type AS ENUM ('meetup', 'online course', 'article', 'classroom course' );
 
 CREATE TABLE resource (
-  id SERIAL PRIMARY KEY,
+  resource_id SERIAL PRIMARY KEY,
   resource_name TEXT NOT NULL,
-  link TEXT NOT NULL,
+  url TEXT NOT NULL,
   resource_description TEXT NOT NULL,
   resource_type e_resource_type,
   country VARCHAR(100) DEFAULT NULL,
@@ -21,7 +21,7 @@ CREATE TABLE resource (
 
 );
 
-INSERT INTO resource (resource_name, link, resource_description, resource_type, country, city) VALUES
+INSERT INTO resource (resource_name, url, resource_description, resource_type, country, city) VALUES
 ('Codebar meetup', 'https://codebar.io/events', 'goal is to enable underrepresented people to learn programming in a safe and collaborative environment and expand their career opportunities..', 'meetup', 'UK', NULL),
 ('Founders and Coders meetup', 'https://www.meetup.com/founderscoders/','Founders & Coders runs a full-time no-fee coding bootcamp. We run meetups for the general public, but we run even more meetups and workshops for applicants to our programme. ', 'meetup', 'UK', 'london' ), 
 ('Tania Rascia', 'https://www.taniarascia.com/how-i-made-a-career-change-into-web-development/', 'I made a career change into web development in 2015. Before that, I worked as a chef.', 'article', NULL, NULL),
@@ -32,7 +32,7 @@ INSERT INTO resource (resource_name, link, resource_description, resource_type, 
 CREATE TYPE e_demographic_tag_name AS ENUM ('age', 'ethnicity', 'disability', 'mental health', 'contacts in industry', 'caring responsibilities', 'education', 'socioeconomic', 'language', 'gender', 'sexuality', 'refugee', 'other');
 
 CREATE TABLE demographic_tag (
-  id SERIAL PRIMARY KEY, 
+  demographic_tag_id SERIAL PRIMARY KEY, 
   tag_name e_demographic_tag_name NOT NULL,
   demographic_description TEXT 
   );
@@ -55,12 +55,12 @@ INSERT INTO demographic_tag (tag_name, demographic_description) VALUES
 
 CREATE TYPE e_relevance AS ENUM ('direct', 'indirect');
 CREATE TABLE demographic_resource_link(
-  resource_id INTEGER REFERENCES resource(id) NOT NULL,
-  demographic_tag_id INTEGER REFERENCES demographic_tag(id) NOT NULL,
+  link_resource_id INTEGER REFERENCES resource(resource_id) NOT NULL,
+  link_demographic_tag_id INTEGER REFERENCES demographic_tag(demographic_tag_id) NOT NULL,
   relevance e_relevance
 );
 
-INSERT INTO demographic_resource_link (resource_id, demographic_tag_id, relevance) VALUES
+INSERT INTO demographic_resource_link (link_resource_id, link_demographic_tag_id, relevance) VALUES
 (1, 1, 'direct'),
 (1, 2, 'direct'),
 (1, 3, 'indirect'),
