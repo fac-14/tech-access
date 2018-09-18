@@ -1,0 +1,26 @@
+ {{!--
+<h3>Meetups</h3> --}}
+<ul>
+  {{#each outArray.meetup}}
+  <li>{{this.resource_name}} {{this.resource_type}}</li>
+  {{/each}}
+</ul>
+
+<ul>
+  {{#each outArray.article}}
+  <li>{{this.resource_name}} {{this.resource_type}}</li>
+  {{/each}}
+</ul>
+
+
+<ul>
+  {{#each outArray.[classroom course]}}
+  <li>{{this.resource_name}} {{this.resource_type}}</li>
+  {{/each}}
+</ul>
+
+<ul>
+  {{#each outArray.[online course] }}
+  <li>{{this.resource_name}} {{this.resource_type}}</li>
+  {{/each}}
+</ul>

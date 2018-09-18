@@ -7,11 +7,15 @@ const background = require('./background')
 const resources = require('./resources')
 const error = require('./error')
 
+const results = require('./results');
+
 router.use(bodyParser.urlencoded({extended: true}));
 router.get('/', home.get);
 router.get('/welcome', welcome.get);
 router.get('/background', background.get);
 router.get('/resources', resources.get);
+
+router.get('/results', results.post);
 
 // trigger 500 error for testing
 
