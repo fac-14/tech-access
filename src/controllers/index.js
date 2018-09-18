@@ -8,6 +8,7 @@ const resources = require('./resources');
 const error = require('./error');
 const moreinfo = require('./moreinfo');
 const sendinfo = require('./sendinfo');
+const results = require('./results');
 
 router.use(bodyParser.urlencoded({ extended: true }));
 router.get('/', home.get);
@@ -16,6 +17,7 @@ router.get('/background', background.get);
 router.get('/resources', resources.get);
 router.get('/more-info', moreinfo.get);
 router.get('/sendinfo', sendinfo.get); //used to be results.get
+router.get('/results', results.get);
 
 // trigger 500 error for testing
 
