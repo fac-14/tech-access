@@ -2,7 +2,7 @@ const db = require("../database/db_connection");
 
 const getResourceDetail = resourceId => {
   return new Promise((resolve, reject) => {
-    db.query(`SELECT * from resource WHERE id ='${resourceId}' `)
+    db.query(`SELECT * from resource WHERE resource_id ='${resourceId}' `)
       .then(res => resolve(res))
       .catch(err => reject(err));
   });
