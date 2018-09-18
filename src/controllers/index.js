@@ -15,7 +15,7 @@ router.get('/welcome', welcome.get);
 router.get('/background', background.get);
 router.get('/resources', resources.get);
 router.get('/more-info', moreinfo.get);
-router.get('/results', results.get);
+router.get('/results', results.post); //used to be results.get
 
 // trigger 500 error for testing
 
