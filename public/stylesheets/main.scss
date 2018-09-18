@@ -20,11 +20,11 @@ $body-font: 'Source Sans Pro', sans-serif;
 $bold-font: 900;
 $regular-font: 400;
 // $heading-1: 5.063em;
-$heading-1: 3.375em;
-$heading-2: 2.25em;
-$base-font-size: 1em;
-$smaller-font-size: 0.667em;
-$larger-font-size: 1.5em;
+$heading-1: 3.375rem;
+$heading-2: 2.25rem;
+$base-font-size: 1.5rem;
+$smaller-font-size: 0.667rem;
+$larger-font-size: 1.5rem;
 
 // COLOR VARIABLES
 
@@ -42,7 +42,8 @@ $accent-colour-dark: #C8A415;
 $o-grid-is-silent: false;
 
 $round-image: 50%;
-$small-image: 200px;
+$small-image: 75%;
+$very-small-image: 20px;
 
 // MIX-INS
 
@@ -73,10 +74,42 @@ h1 {
     font-size: $heading-1;
 }
 
+progress[value] {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-apperance: none;
+    width: 100%;
+    height: 100%;
+}
+
+progress[value]::-webkit-progress-bar {
+    background: $primary-bg-colour-light;
+    box-shadow: 0 2px 5px $primary-bg-colour inset;
+}
+
+progress[value]::-webkit-progress-value {
+    background-color: $accent-colour;
+}
+
+progress {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-apperance: none;
+    width: 100%;
+    height: 100%;
+    background: $primary-bg-colour-light;
+    box-shadow: 0 2px 5px $primary-bg-colour inset;
+}
+
+progress[value]::-moz-progress-bar {
+    background-color: $accent-colour;
+    box-shadow: 0 2px 5px $primary-bg-colour inset;
+}
+
 // CLASSES
 
 .full-viewport {
-    min-height: 100vh;
+    min-height: 95vh;
     width: 100vw;
 }
 
@@ -114,6 +147,12 @@ h1 {
     padding-right: 10px;
 }
 
+.centered-content-no-padding {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .eight-padding {
     padding: 8px;
 }
@@ -126,7 +165,17 @@ h1 {
     padding: 32px;
 }
 
+.progressbar {
+    position: fixed;
+    width: 100%;
+    height: 5%;
+    left: 0;
+    bottom: 0;
+    background: white;
+}
+
 // IDS
+
 
 // #test-container {
 //     @include oGridContainer();
@@ -156,7 +205,6 @@ img {
         radius: $round-image;
     }
     width: $small-image;
-    height: $small-image;
     max-width: 90%;
 }
 
