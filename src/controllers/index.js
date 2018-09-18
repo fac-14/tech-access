@@ -1,17 +1,21 @@
 const express = require('express');
 const router = express.Router();
 const bodyParser = require('body-parser');
-const home = require('./home')
-const welcome = require('./welcome')
-const background = require('./background')
-const resources = require('./resources')
-const error = require('./error')
+const home = require('./home');
+const welcome = require('./welcome');
+const background = require('./background');
+const resources = require('./resources');
+const error = require('./error');
+const moreinfo = require('./moreinfo');
+const results = require('./results');
 
 router.use(bodyParser.urlencoded({extended: true}));
 router.get('/', home.get);
 router.get('/welcome', welcome.get);
 router.get('/background', background.get);
 router.get('/resources', resources.get);
+router.get('/more-info', moreinfo.get);
+router.get('/results', results.get);
 
 // trigger 500 error for testing
 

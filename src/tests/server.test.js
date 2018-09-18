@@ -66,3 +66,25 @@ describe('Test welcome route', () => {
     });
   });
 });
+
+describe('Test more info route', () => {
+  test('It should respond with 200 to GET method', (done) => {
+    supertest(app)
+      .get('/more-info')
+      .then((response) => {
+        expect(response.statusCode).toBe(200);
+        done();
+    });
+  });
+});
+
+describe('Test results route', () => {
+  test('It should respond with 200 to GET method', (done) => {
+    supertest(app)
+      .get('/results')
+      .then((response) => {
+        expect(response.statusCode).toBe(200);
+        done();
+    });
+  });
+});

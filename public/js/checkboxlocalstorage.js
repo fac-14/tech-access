@@ -1,9 +1,18 @@
 var checkboxes = document.querySelectorAll('.govuk-checkboxes__input');
 
-for (var i=0; i < checkboxes.length; i++) {
-  checkboxes[i].addEventListener('click', clickFunc);
-}
+checkboxes.forEach(function (i) {
+  i.addEventListener('click', clickFunc);
+  if(sessionStorage.hasOwnProperty(i.value)){
+    i.checked = true;
+  }
+})
 
 function clickFunc() {
-  localStorage.setItem(this.value, this.value);
+  if(this.checked){
+    sessionStorage.setItem(this.value, this.value);
+  } else {
+    if(sessionStorage.hasOwnProperty(this.value)){
+      sessionStorage.removeItem(this.value);
+    }
+  }
 }
