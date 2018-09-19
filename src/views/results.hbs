@@ -5,8 +5,7 @@
         <h3>Meetups</h3>
         <ul>
             {{#each meetup}}
-            {{!-- <li><a href = {{#with url}} {{this}} {{/with}} --}}
-            <li> <a href='{{this.url}}' target='_blank'>{{this.resource_name}} </a>
+              <li><a href='{{this.url}}' target='_blank'>{{this.resource_name}}</a>
             <ul>
                 <li>{{this.resource_description}}</li>
             </ul>
@@ -28,6 +27,62 @@
             {{/each}}
         </ul>
         {{/if}}
+
+{{#if [classroom course]}}
+        <h3>Classroom course</h3>
+        <ul>
+            {{#each [classroom course]}}
+            <li><a href='{{this.url}}' target='_blank'>
+                {{this.resource_name}}</a>
+                <ul>
+                <li>{{this.resource_description}}</li>
+            </ul>
+            </li>
+            {{/each}}
+        </ul>
+        {{/if}}
+
+{{#if [online course]}}
+        <h3>Online course</h3>
+        <ul>
+            {{#each [online course]}}
+            <li><a href='{{this.url}}' target='_blank'>
+                {{this.resource_name}}</a>
+                <ul>
+                <li>{{this.resource_description}}</li>
+            </ul>
+            </li>
+            {{/each}}
+        </ul>
+        {{/if}}
+
+{{#if mentor}}
+        <h3>Mentor</h3>
+        <ul>
+            {{#each mentor}}
+            <li><a href='{{this.url}}' target='_blank'>
+                {{this.resource_name}}</a>
+                <ul>
+                <li>{{this.resource_description}}</li>
+            </ul>
+            </li>
+            {{/each}}
+        </ul>
+        {{/if}}  
+
+{{#if others}}
+        <h3>Other</h3>
+        <ul>
+            {{#each others}}
+            <li><a href='{{this.url}}' target='_blank'>
+                {{this.resource_name}}</a>
+                <ul>
+                <li>{{this.resource_description}}</li>
+            </ul>
+            </li>
+            {{/each}}
+        </ul>
+        {{/if}}      
 
         {{/with}}
 
