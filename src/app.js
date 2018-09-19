@@ -4,7 +4,7 @@ var sassMiddleware = require('node-sass-middleware');
 const path = require('path');
 const controllers = require('./controllers/index.js');
 // const helpers = require('./views/helpers/index.js');
-// const favicon = require('serve-favicon');
+const favicon = require('serve-favicon');
 
 const app = express();
 
@@ -23,7 +23,7 @@ app.engine(
 
 app.set('port', process.env.PORT || 1337);
 // app.set('host', process.env.HOST || 'localhost');
-//app.use(favicon(path.join(__dirname, '..', 'public', 'favicon.ico')));
+app.use(favicon(path.join(__dirname, '..', 'public', 'favicon.ico')));
 app.use(sassMiddleware({
   src: __dirname,
   dest: path.join(__dirname, '..', 'public'),
