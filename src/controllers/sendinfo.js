@@ -39,8 +39,13 @@ exports.post = (req, response) => {
         //populate new resouce in our result array
         resultArrIndx = 0;
         resultArray.push({
-          resource_id: inArray[i].resource_id, resource_name: inArray[i].resource_name,
-          url: inArray[i].url, resource_type: inArray[i].resource_type
+          resource_id: inArray[i].resource_id, 
+          resource_name: inArray[i].resource_name,
+          url: inArray[i].url, 
+          resource_type: inArray[i].resource_type, 
+          resource_description: inArray[i].resource_description,
+          resource_country: inArray[i].country, 
+          resource_city: inArray[i].city
         });
          resultArray[resultArrIndx].direct = [];
         resultArray[resultArrIndx].indirect = [];
@@ -64,8 +69,13 @@ exports.post = (req, response) => {
         //populate new resouce in our result array
         //create new key demo_tag_relevance and push {tagname:'tagname value', relevance:'rel value'}
         resultArray.push({
-          resource_id: inArray[i].resource_id, resource_name: inArray[i].resource_name,
-          url: inArray[i].url, resource_type: inArray[i].resource_type
+          resource_id: inArray[i].resource_id, 
+          resource_name: inArray[i].resource_name,
+          url: inArray[i].url, 
+          resource_type: inArray[i].resource_type, 
+          resource_description: inArray[i].resource_description,
+          resource_country: inArray[i].country, 
+          resource_city: inArray[i].city
         });
         resultArray[resultArrIndx].direct = [];
         resultArray[resultArrIndx].indirect = [];

@@ -2,7 +2,7 @@ const db = require("../database/db_connection");
 
 const getData = (bgArray, rscArray) => {
   console.log('INPUTARR', bgArray, rscArray);
-  var dataQuery = `select resource.resource_id ,resource.resource_name,resource.url, resource.resource_type, demographic_tag. demographic_tag_id, demographic_tag.tag_name, demographic_resource_link.relevance from resource INNER JOIN demographic_resource_link ON resource.resource_id = demographic_resource_link.link_resource_id INNER JOIN demographic_tag ON demographic_resource_link.link_demographic_tag_id = demographic_tag. demographic_tag_id WHERE (demographic_tag.tag_name='${
+  var dataQuery = `select resource.resource_id ,resource.resource_name,resource.url, resource.resource_type, resource.country, resource.city, resource.resource_description, demographic_tag. demographic_tag_id, demographic_tag.tag_name, demographic_resource_link.relevance from resource INNER JOIN demographic_resource_link ON resource.resource_id = demographic_resource_link.link_resource_id INNER JOIN demographic_tag ON demographic_resource_link.link_demographic_tag_id = demographic_tag. demographic_tag_id WHERE (demographic_tag.tag_name='${
     bgArray[0]
     }'`;
 
