@@ -5,8 +5,7 @@
         <h3>Meetups</h3>
         <ul>
             {{#each meetup}}
-            {{!-- <li><a href = {{#with url}} {{this}} {{/with}} --}}
-            <li> <a href='{{this.url}}' target='_blank'>{{this.resource_name}} </a>
+              <li><a href='{{this.url}}' target='_blank'>{{this.resource_name}}</a>
             <ul>
                 <li>{{this.resource_description}}</li>
             </ul>
