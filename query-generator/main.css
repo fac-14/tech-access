@@ -1,0 +1,25 @@
+* {
+    background: skyblue;
+    font-size: 1.1rem;
+}
+
+h1{
+    font-size: 1.8rem;
+}
+
+#form-container {
+    background: skyblue;
+}
+
+input {
+    border-color: black;
+    border-width: 2px;
+    padding: 5px;
+    margin: 5px;
+    height: 1.2rem;
+}
+
+input[type='submit'] {
+    background: white;
+    height: 1.8rem;
+}
