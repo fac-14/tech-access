@@ -13,14 +13,18 @@ exports.post = (req, response) => {
     console.log('resultArray', resultArray);
     const outArray = filterByType(resultArray);
     console.log('OUTPUT ARRAY', outArray);
-    //res.render('results', {outArray});
-    response.send(outArray);
+    //store the response in a cookie as a stringified object
+    response.cookie('tastyResultsCookie', outArray)
+    // then redirect to the results page
+    response.redirect('/results');
   })
   .catch(err => console.log(err));
 
   function filterByType(inArray) {
-    const types = ['meetup', 'online course', 'article', 'classroom course'];
-    const outArr = []
+    const types = ['meetup', 'online course', 'article', 'classroom course', 'mentor'];
+    //change from Arr to Obj because having trouble accessing arr
+    // const outArr = []
+    const outArr = {}
     types.forEach(mytype => {
       //outArr[meetup]= filtered result
       // setting keys to values from filter function

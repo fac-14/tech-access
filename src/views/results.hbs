@@ -1,6 +1,43 @@
 <section class='grid-row'>
-    <div class='centered-column centered-content secondary-background thirtytwo-padding full-height'>
-        <p>WE GOT NUTHIN</p>
+    <div class='centered-column centered-content secondary-background thirtytwo-padding full-height flex-column'>
+        {{#with results}}
+        <div>
+            <h2>meetups</h2>
+
+            <ul>
+                {{#if meetup}}
+                    {{#each meetup}}
+                        <li>
+                            {{#with resource_name}}
+                                {{this}}
+                            {{/with}}
+                            {{#with url}}
+                                {{this}}
+                            {{/with}}
+                        </li>
+                    {{/each}}
+                {{/if}}
+            </ul>
+        </div>
+        <div>
+            <h2>articles</h2>
+
+            <ul>
+            {{#if article}}
+                {{#each article}}
+                    <li>
+                        {{#with resource_name}}
+                            {{this}}
+                        {{/with}}
+                        {{#with url}}
+                            {{this}}
+                        {{/with}}
+                    </li>
+                {{/each}}
+            {{/if}}
+            </ul>
+        </div>
+        {{/with}}
     </div>
 </section>
 <section class='grid-row'>

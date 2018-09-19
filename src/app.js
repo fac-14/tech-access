@@ -5,6 +5,7 @@ const path = require('path');
 const controllers = require('./controllers/index.js');
 // const helpers = require('./views/helpers/index.js');
 // const favicon = require('serve-favicon');
+const cookieParser = require('cookie-parser');
 
 const app = express();
 
@@ -32,6 +33,8 @@ app.use(sassMiddleware({
   prefix:  '/stylesheets'
 }));
 app.use(express.static(path.join(__dirname, '..', 'public')));
+// add cookie parser, needs to come before controllers so cookies are parsed before routes are rendered
+app.use(cookieParser());
 app.use(controllers);
 
 module.exports = app;

@@ -153,6 +153,10 @@ progress[value]::-moz-progress-bar {
     justify-content: center;
 }
 
+.flex-column {
+    flex-direction: column;
+}
+
 .eight-padding {
     padding: 8px;
 }

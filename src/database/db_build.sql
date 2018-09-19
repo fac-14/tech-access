@@ -8,7 +8,7 @@ DROP TYPE IF EXISTS e_resource_type CASCADE;
 DROP TYPE IF EXISTS e_demographic_tag_name CASCADE;
 DROP TYPE IF EXISTS e_relevance CASCADE;
 
-CREATE TYPE e_resource_type AS ENUM ('meetup', 'online course', 'article', 'classroom course' );
+CREATE TYPE e_resource_type AS ENUM ('meetup', 'online course', 'article', 'classroom course', 'mentor');
 
 CREATE TABLE resource (
   resource_id SERIAL PRIMARY KEY,
