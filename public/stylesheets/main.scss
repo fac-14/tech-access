@@ -24,6 +24,7 @@ $heading-1: 3.375rem;
 $heading-2: 2.25rem;
 $base-font-size: 1.5rem;
 $smaller-font-size: 0.667rem;
+$medium-font-size: 1.25rem;
 $larger-font-size: 1.5rem;
 
 // COLOR VARIABLES
@@ -125,6 +126,25 @@ progress[value]::-moz-progress-bar {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+}
+
+.li-outer {
+    font-family: $body-font;
+    color: $primary-text-colour;
+    font-weight: $regular-font;
+    font-size: $base-font-size;
+    margin-top: 8px;
+    margin-bottom: 16px;
+}
+
+.li-inner {
+    list-style-type: none;
+    font-family: $body-font;
+    color: $primary-text-colour;
+    font-weight: $regular-font;
+    font-size: $medium-font-size;
+    background-color: #b3c4cc;
+    padding: 16px;
 }
 
 .primary-background {

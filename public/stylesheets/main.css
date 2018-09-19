@@ -803,6 +803,25 @@ progress[value]::-moz-progress-bar {
   justify-content: space-between;
 }
 
+.li-outer {
+  font-family: "Source Sans Pro", sans-serif;
+  color: #222;
+  font-weight: 400;
+  font-size: 1.5rem;
+  margin-top: 8px;
+  margin-bottom: 16px;
+}
+
+.li-inner {
+  list-style-type: none;
+  font-family: "Source Sans Pro", sans-serif;
+  color: #222;
+  font-weight: 400;
+  font-size: 1.25rem;
+  background-color: #b3c4cc;
+  padding: 16px;
+}
+
 .primary-background {
   background: #8FA3AD;
 }
