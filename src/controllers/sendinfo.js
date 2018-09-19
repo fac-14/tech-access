@@ -1,7 +1,7 @@
 const queries = require('../model/index')
 const queryString = require('query-string');
 
-exports.get = (req, response) => {
+exports.post = (req, response) => {
   var queryObj = queryString.parseUrl(req.url).query;
   var backgroundArr = queryObj.bg.split(",");
   var resourceArr = queryObj.rsc.split(",");
