@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Query generator!</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- <link rel="stylesheet" type="text/css" media="screen" href="main.css" /> -->
+</head>
+<body>
+    <h1>Query generator!</h1>
+    <div>
+        <form id="submit-me">
+            Resource name:<br>
+            <input type="text" name="resourcename" id="name" required autocomplete="off"><br>
+            Resource desc:<br>
+            <input type="text" name="lastname" id="description" required autocomplete="off"><br>
+            Resource URL:<br>
+            <input type="text" name="url" id="url" required autocomplete="off"><br>
+            Resource type:<br>
+            <input list="resource-types" id="type" required autocomplete="off"><br>
+                <datalist id="resource-types">
+                    <option value="meetup">
+                    <option value="classroom course">
+                    <option value="mentor">
+                    <option value="online course">
+                    <option value="article">
+                </datalist>
+            Country:<br>
+            <input type="text" name="country" id="country" value="NULL" required autocomplete="off"><br>
+            City:<br>
+            <input type="text" name="city" id="city" value="NULL" required autocomplete="off"><br>
+
+            DIRECTLY RELEVANT:<br>
+                <input type="checkbox" name="vehicle1" value="Bike"> I have a bike<br>
+                <input type="checkbox" name="vehicle2" value="Car"> I have a car
+
+
+
+
+            <input type="submit" name="submit" id="submit" ><br>
+          </form>
+
+
+          
+
+            
+    </div>
+
+    <h3 id="query-goes-here">Query will appear here</h3>
+
+    <script src="main.js"></script>
+</body>
+</html>
