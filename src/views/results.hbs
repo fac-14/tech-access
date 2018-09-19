@@ -1,6 +1,36 @@
 <section class='grid-row'>
-    <div class='centered-column centered-content secondary-background thirtytwo-padding full-height'>
-        <p>WE GOT NUTHIN</p>
+    <div class='centered-column secondary-background thirtytwo-padding full-height flex-col padding-lft '>
+        {{#with results}} 
+        {{#if meetup}}
+        <h3>Meetups</h3>
+        <ul>
+            {{#each meetup}}
+            {{!-- <li><a href = {{#with url}} {{this}} {{/with}} --}}
+            <li> <a href='{{this.url}}' target='_blank'>{{this.resource_name}} </a>
+            <ul>
+                <li>{{this.resource_description}}</li>
+            </ul>
+            </li>
+            {{/each}}
+        </ul>
+        {{/if}}
+
+        {{#if article}}
+        <h3>Articles</h3>
+        <ul>
+            {{#each article}}
+            <li><a href='{{this.url}}' target='_blank'>
+                {{this.resource_name}}</a>
+                <ul>
+                <li>{{this.resource_description}}</li>
+            </ul>
+            </li>
+            {{/each}}
+        </ul>
+        {{/if}}
+
+        {{/with}}
+
     </div>
 </section>
 <section class='grid-row'>

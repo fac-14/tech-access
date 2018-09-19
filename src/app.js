@@ -3,6 +3,7 @@ const handlebars = require('express-handlebars');
 var sassMiddleware = require('node-sass-middleware');
 const path = require('path');
 const controllers = require('./controllers/index.js');
+const cookieParser = require('cookie-parser');
 // const helpers = require('./views/helpers/index.js');
 // const favicon = require('serve-favicon');
 
@@ -32,6 +33,7 @@ app.use(sassMiddleware({
   prefix:  '/stylesheets'
 }));
 app.use(express.static(path.join(__dirname, '..', 'public')));
+app.use(cookieParser());
 app.use(controllers);
 
 module.exports = app;
