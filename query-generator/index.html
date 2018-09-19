@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Query generator!</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+</head>
+<body>
+    <h1>Query generator!</h1>
+
+    <p>Important instructions: please insert unique resources (ensure resource name is unique!), and ensure you don't select the same demographic tags under "directly relevant" and "indirectly relevant"!</p>
+
+    <p>
+        Generate a query, then copy it (it will appear at the bottom of this document). Then add it to your list of resources to insert somewhere and we'll put them all together in our db build! Try it out in your psql if you'd like to check that it works.
+    </p>
+
+    <p>
+        Please refresh the page each time to be safe. Cheers!
+    </p>
+
+    <div id="form-container">
+        <form id="submit-me">
+            Resource name:<br>
+            <input type="text" name="resourcename" id="name" required autocomplete="off"><br>
+            Resource desc:<br>
+            <input type="text" name="lastname" id="description" required autocomplete="off"><br>
+            Resource URL:<br>
+            <input type="text" name="url" id="url" required autocomplete="off"><br>
+            Resource type:<br>
+            <input list="resource-types" id="type" required autocomplete="off"><br>
+                <datalist id="resource-types">
+                    <option value="meetup">
+                    <option value="classroom course">
+                    <option value="mentor">
+                    <option value="online course">
+                    <option value="article">
+                    <option value="others">
+                </datalist>
+            Country (keep as NULL if nothing):<br>
+            <input type="text" name="country" id="country" value="NULL" required autocomplete="off"><br>
+            City (keep as NULL if nothing):<br>
+            <input type="text" name="city" id="city" value="NULL" required autocomplete="off"><br>
+
+            DIRECTLY RELEVANT:<br>
+            <div id="directly-relevant">
+                <input type="checkbox" name="age" id="age">age<br>
+                <input type="checkbox" name="ethnicity" id="ethnicity">ethnicity<br>
+                <input type="checkbox" name="disability" id="disability">disability<br>
+                <input type="checkbox" name="mental health" id="mental-health">mental health<br>
+                <input type="checkbox" name="contacts in0industry" id="contacts-in-industry">contacts in industry<br>
+                <input type="checkbox" name="caring responsibilities" id="caring-responsibilities">caring responsibilities<br>
+                <input type="checkbox" name="education" id="education">education<br>
+                <input type="checkbox" name="socioeconomic" id="socioeconomic">socioeconomic<br>
+                <input type="checkbox" name="language" id="language">language<br>
+                <input type="checkbox" name="gender" id="gender">gender<br>
+                <input type="checkbox" name="sexuality" id="sexuality">sexuality<br>
+                <input type="checkbox" name="refugee" id="refugee">refugee<br>
+                <input type="checkbox" name="other" id="other">other<br>
+            </div>
+
+                INDIRECTLY RELEVANT:<br>
+                <p>The resource is useful for people with these background "factors" but is not directly targeted to them. E.g. an online course might tick all of the below boxes but not be directly relevant to anyone</p>
+            <div id="indirectly-relevant">
+                <input type="checkbox" name="age" id="age2">age<br>
+                <input type="checkbox" name="ethnicity" id="ethnicity2">ethnicity<br>
+                <input type="checkbox" name="disability" id="disability2">disability<br>
+                <input type="checkbox" name="mental health" id="mental-health2">mental health<br>
+                <input type="checkbox" name="contacts in industry" id="contacts-in-industry2">contacts in industry<br>
+                <input type="checkbox" name="caring responsibilities" id="caring-responsibilities2">caring responsibilities<br>
+                <input type="checkbox" name="education" id="education">education<br>
+                <input type="checkbox" name="socioeconomic" id="socioeconomic">socioeconomic<br>
+                <input type="checkbox" name="language" id="language">language<br>
+                <input type="checkbox" name="gender" id="gender">gender<br>
+                <input type="checkbox" name="sexuality" id="sexuality">sexuality<br>
+                <input type="checkbox" name="refugee" id="refugee">refugee<br>
+                <input type="checkbox" name="other" id="other">other<br>
+            </div>
+
+            <input type="submit" name="submit" id="submit" ><br>
+          </form>
+
+
+          
+
+            
+    </div>
+
+    <h3 id="query-goes-here">Query will appear here</h3>
+
+    <script src="main.js"></script>
+</body>
+</html>
