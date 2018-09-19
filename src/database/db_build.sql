@@ -8,7 +8,7 @@ DROP TYPE IF EXISTS e_resource_type CASCADE;
 DROP TYPE IF EXISTS e_demographic_tag_name CASCADE;
 DROP TYPE IF EXISTS e_relevance CASCADE;
 
-CREATE TYPE e_resource_type AS ENUM ('meetup', 'online course', 'article', 'classroom course' );
+CREATE TYPE e_resource_type AS ENUM ('meetup', 'online course', 'article', 'classroom course', 'mentor', 'others');
 
 CREATE TABLE resource (
   resource_id SERIAL PRIMARY KEY,
@@ -22,11 +22,24 @@ CREATE TABLE resource (
 );
 
 INSERT INTO resource (resource_name, url, resource_description, resource_type, country, city) VALUES
-('Codebar meetup', 'https://codebar.io/events', 'goal is to enable underrepresented people to learn programming in a safe and collaborative environment and expand their career opportunities..', 'meetup', 'UK', NULL),
-('Founders and Coders meetup', 'https://www.meetup.com/founderscoders/','Founders & Coders runs a full-time no-fee coding bootcamp. We run meetups for the general public, but we run even more meetups and workshops for applicants to our programme. ', 'meetup', 'UK', 'london' ), 
+('Codebar meetup', 'https://codebar.io/events', 'The goal is to enable underrepresented people to learn programming in a safe and collaborative environment and expand their career opportunities.', 'meetup', 'UK', NULL),
+('Founders and Coders meetup', 'https://www.meetup.com/founderscoders/','Founders & Coders runs a full-time no-fee coding bootcamp. We run meetups for the general public, but we run even more meetups and workshops for applicants to our programme. ', 'meetup', 'UK', 'London' ), 
 ('Tania Rascia', 'https://www.taniarascia.com/how-i-made-a-career-change-into-web-development/', 'I made a career change into web development in 2015. Before that, I worked as a chef.', 'article', NULL, NULL),
 ('Free code camp: stories from 300 developers who got their first tech job in their 30s 40s and 50s', 'https://medium.freecodecamp.org/stories-from-300-developers-who-got-their-first-tech-job-in-their-30s-40s-and-50s-64306eb6bb27', 'people of all ages who are worried that they’re “too old” to learn to code and get hired as a developer', 'article', NULL, NULL),
-('Free Code Camp', 'https://www.freecodecamp.org/', 'Our mission: to help people learn to code for free. We accomplish this by creating thousands of videos, articles, and interactive coding lessons - all freely available to the public. We also have thousands of freeCodeCamp study groups around the world.', 'online course', NULL, NULL );
+('Free Code Camp', 'https://www.freecodecamp.org/', 'Our mission: to help people learn to code for free. We accomplish this by creating thousands of videos, articles, and interactive coding lessons - all freely available to the public. We also have thousands of freeCodeCamp study groups around the world.', 'online course', NULL, NULL ),
+('Dyslexia and learning computer programming', 'https://www.tandfonline.com/doi/full/10.11120/ital.2004.03020005', 'This paper explores some of the issues associated with teaching computer science to students with dyslexia. Issues associated with both student learning generally and computer science specifically are considered. The accessibility of teaching materials made available through virtual learning environments (VLEs) is addressed.', 'article', NULL, NULL),
+('Including students with disabilities in computer science courses', 'http://specialedtech.net/2016/12/02/including-students-disabilities-computer-science-courses/', 'If we want upcoming software programs to serve diverse needs, we need to teach computer science to diverse people, including students with disabilities. Opening this door will do much to help all our students succeed in life.', 'online course', NULL, NULL),
+('Front-end web developer career for person with a disability?', 'https://ask.metafilter.com/293961/Front-end-web-developer-career-for-person-with-a-disability', '[forum thread]', 'others', 'U.S.', NULL),
+('Evenbreak', 'https://www.evenbreak.co.uk/', 'Helping talented disabled candidates and inclusive employers to find each other [recruitment agency]', 'others', 'UK', NULL),
+('Blu Digital', 'http://www.blu-digital.co.uk/jobs/web-development-jobs/', 'Blu Digital offer technical recruitment services which cover web development, mobile development and software development positions, covering technologies such as HTML, CSS, Javascript, React.js, Angular, Node.js, Python C#, C++, .NET, Ruby, Golang, PHP and Unity. [recruitment]', 'others', 'UK', NULL),
+('Job Hunting Tricks for Older Tech Workers', 'https://insights.dice.com/2014/01/02/job-hunting-tricks-older-tech-workers/', '[career advice]', 'article', 'U.S.', NULL),
+('Computer Skills for People with Disabilities', 'http://www.forsythcomputertraining.org/ComputerSkillsForTheDisabled.aspx', 'This course will analyze currently available technologies for learning. Areas addressed include: learning management systems, intelligent tutors, computer adaptive testing, gamification, simulations, learning in and through social media and peer interaction, universal design for learning, differentiated instruction systems, big data and learning analytics, attention monitoring, and affect-aware systems.', 'online course', NULL, NULL),
+('City Lit - Web design & development', 'https://www.citylit.ac.uk/courses/technology-science-and-business/web-design-and-development', 'Learn to design and develop website for your business or as a career, and learn new programming techniques.', 'classroom course', 'UK', 'London'),
+('Free coding workshop for women', 'https://www.wegotcoders.com/courses/free-coding-workshop-for-women', 'Learn to code with like-minded people in comfortable surroundings on our free coding workshops', 'meetup', 'UK', 'Yewlands Hoddesdon Hertfordshire'),
+('Code Your Future', 'https://codeyourfuture.io/', 'We are a non-profit organisation supporting refugees with the dream of becoming developers. In their journey of interrupted lives, unfinished studies and integration challenges, many asylum seekers and refugees yearn to update their tech skills, but lack learning opportunities. We want to change this.', 'classroom course', 'UK', NULL),
+('Front-end London', 'https://www.frontendlondon.co.uk/', 'Front-end London is a free monthly meetup about front-end development & design.', 'meetup', 'UK', 'London'),
+('PHP Hampshire', 'https://www.phphants.co.uk/meetups', 'PHP Hampshire is a PHP User Group aiming to help people learn, share our knowledge and support the PHP community in Hampshire.', 'meetup', 'UK', 'Portsmouth' )
+;
  
 
 CREATE TYPE e_demographic_tag_name AS ENUM ('age', 'ethnicity', 'disability', 'mental health', 'contacts in industry', 'caring responsibilities', 'education', 'socioeconomic', 'language', 'gender', 'sexuality', 'refugee', 'other');
@@ -98,7 +111,31 @@ INSERT INTO demographic_resource_link (link_resource_id, link_demographic_tag_id
 (5, 9, 'indirect'),
 (5, 10, 'indirect'),
 (5, 11, 'indirect'),
-(5, 12, 'indirect');
+(5, 12, 'indirect'),
+(6, 3, 'direct'),
+(6, 7, 'direct'),
+(7, 3, 'direct'),
+(7, 7, 'direct'),
+(8, 3, 'direct'),
+(8, 5, 'direct'),
+(8, 13, 'direct'),
+(9, 3, 'direct'),
+(9, 13, 'direct'),
+(10, 13, 'direct'),
+(11, 1, 'direct'),
+(11, 13, 'direct'),
+(12, 3, 'direct'),
+(12, 7, 'direct'),
+(13, 7, 'direct'),
+(14, 10, 'direct'),
+(14, 7, 'direct'),
+(15, 12, 'direct'),
+(15, 7, 'indirect'),
+(16, 7, 'indirect'),
+(17, 7, 'indirect');
+
+
+
 
 
 COMMIT;
