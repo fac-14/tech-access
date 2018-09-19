@@ -22,7 +22,7 @@ app.engine(
 );
 
 app.set('port', process.env.PORT || 1337);
-app.set('host', process.env.PORT || 'localhost');
+// app.set('host', process.env.HOST || 'localhost');
 //app.use(favicon(path.join(__dirname, '..', 'public', 'favicon.ico')));
 app.use(sassMiddleware({
   src: __dirname,
