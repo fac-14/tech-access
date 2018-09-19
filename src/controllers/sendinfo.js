@@ -12,15 +12,16 @@ exports.post = (req, response) => {
     const resultArray = arrangeArray(dbObj.rows); 
     console.log('resultArray', resultArray);
     const outArray = filterByType(resultArray);
-    console.log('OUTPUT ARRAY', outArray);
-    //res.render('results', {outArray});
-    response.send(outArray);
+   console.log('OUTPUT ARRAY', outArray);
+   response.cookie('results', outArray);
+    response.redirect('/results');
+    //response.send(outArray);
   })
   .catch(err => console.log(err));
 
   function filterByType(inArray) {
-    const types = ['meetup', 'online course', 'article', 'classroom course'];
-    const outArr = []
+    const types = ['meetup', 'online course', 'article', 'classroom course', 'mentor'];
+    const outArr = {}
     types.forEach(mytype => {
       //outArr[meetup]= filtered result
       // setting keys to values from filter function

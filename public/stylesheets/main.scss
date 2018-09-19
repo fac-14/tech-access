@@ -146,6 +146,10 @@ progress[value]::-moz-progress-bar {
     justify-content: center;
     padding-right: 10px;
 }
+.flex-col{
+    flex-direction:column;
+}
+
 
 .centered-content-no-padding {
     display: flex;
@@ -163,6 +167,9 @@ progress[value]::-moz-progress-bar {
 
 .thirtytwo-padding {
     padding: 32px;
+}
+.padding-lft {
+    padding-left:64px;
 }
 
 .progressbar {
