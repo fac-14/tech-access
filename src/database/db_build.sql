@@ -8,14 +8,14 @@ DROP TYPE IF EXISTS e_resource_type CASCADE;
 DROP TYPE IF EXISTS e_demographic_tag_name CASCADE;
 DROP TYPE IF EXISTS e_relevance CASCADE;
 
-CREATE TYPE e_resource_type AS ENUM ('meetup', 'online course', 'article', 'classroom course', 'mentor', 'others');
+-- CREATE TYPE e_resource_type AS ENUM ('meetup', 'online course', 'article', 'classroom course', 'mentor', 'others');
 
 CREATE TABLE resource (
   resource_id SERIAL PRIMARY KEY,
   resource_name TEXT NOT NULL,
   url TEXT NOT NULL,
   resource_description TEXT NOT NULL,
-  resource_type e_resource_type,
+  resource_type VARCHAR(100) NOT NULL,
   country VARCHAR(100) DEFAULT NULL,
   city VARCHAR(100) DEFAULT NULL
 
@@ -42,11 +42,11 @@ INSERT INTO resource (resource_name, url, resource_description, resource_type, c
 ;
  
 
-CREATE TYPE e_demographic_tag_name AS ENUM ('age', 'ethnicity', 'disability', 'mental health', 'contacts in industry', 'caring responsibilities', 'education', 'socioeconomic', 'language', 'gender', 'sexuality', 'refugee', 'other');
+-- CREATE TYPE e_demographic_tag_name AS ENUM ('age', 'ethnicity', 'disability', 'mental health', 'contacts in industry', 'caring responsibilities', 'education', 'socioeconomic', 'language', 'gender', 'sexuality', 'refugee', 'other');
 
 CREATE TABLE demographic_tag (
   demographic_tag_id SERIAL PRIMARY KEY, 
-  tag_name e_demographic_tag_name NOT NULL,
+  tag_name VARCHAR(100) NOT NULL,
   demographic_description TEXT 
   );
 
