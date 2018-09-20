@@ -635,8 +635,11 @@ textarea {
   min-height: 95vh;
   width: 100vw; }
 
+.full-splash-height {
+  height: calc(100vh - (4.5 * 3.375rem)); }
+
 .full-height {
-  height: calc(100vh - (4 * 3.375rem)); }
+  min-height: 55vh; }
 
 .fixed-height-double-h1 {
   height: 6.75rem; }

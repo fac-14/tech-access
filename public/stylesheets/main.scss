@@ -124,8 +124,12 @@ textarea {
     width: 100vw;
 }
 
+.full-splash-height {
+    height: calc(100vh - (4.5 * #{$heading-1}));
+}
+
 .full-height {
-    height: calc(100vh - (4 * #{$heading-1}));
+    min-height: 55vh;
 }
 
 .fixed-height-double-h1 {
