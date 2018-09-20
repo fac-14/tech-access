@@ -43,7 +43,7 @@ $accent-colour-dark: #C8A415;
 $o-grid-is-silent: false;
 
 $round-image: 50%;
-$small-image: 75%;
+$small-image: 70%;
 $very-small-image: 20px;
 
 // MIX-INS
@@ -73,6 +73,10 @@ body {
 
 h1 {
     font-size: $heading-1;
+}
+
+h3 {
+    text-align: center;
 }
 
 progress[value] {
@@ -107,6 +111,12 @@ progress[value]::-moz-progress-bar {
     box-shadow: 0 2px 5px $primary-bg-colour inset;
 }
 
+textarea {
+    font-size: $base-font-size;
+    color: $heading-text-colour;
+    resize: none;
+}
+
 // CLASSES
 
 .full-viewport {
@@ -114,8 +124,12 @@ progress[value]::-moz-progress-bar {
     width: 100vw;
 }
 
+.full-splash-height {
+    height: calc(100vh - (4.5 * #{$heading-1}));
+}
+
 .full-height {
-    height: calc(100vh - (4 * #{$heading-1}));
+    min-height: 55vh;
 }
 
 .fixed-height-double-h1 {
@@ -201,8 +215,16 @@ progress[value]::-moz-progress-bar {
     background: white;
 }
 
+.small-text {
+    font-size: $medium-font-size;
+}
+
 // IDS
 
+#more-info-field {
+    width: 80%;
+    height: 60%;
+}
 
 // #test-container {
 //     @include oGridContainer();
