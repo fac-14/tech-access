@@ -24,7 +24,7 @@ exports.post = (req, response) => {
   .catch(err => console.log(err));
 
   function filterByType(inArray) {
-    const types = ['meetup', 'online course', 'article', 'classroom course', 'mentor'];
+    const types = ['meetup', 'online course', 'article', 'classroom course', 'mentor', 'others'];
     const outArr = {}
     types.forEach(mytype => {
       //outArr[meetup]= filtered result
