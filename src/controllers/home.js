@@ -3,6 +3,6 @@ exports.get = (req, res) => {
     {
       activePage:{home: true},
       progressamt: '0',
-      title: 'Tech Access App'
+      title: 'diversiTech'
     })
 }

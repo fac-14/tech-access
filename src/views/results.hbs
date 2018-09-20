@@ -1,13 +1,13 @@
 <section class='grid-row'>
-    <div class='centered-column secondary-background thirtytwo-padding full-height flex-col padding-lft '>
+    <div class='centered-column secondary-background thirtytwo-padding flex-col padding-lft'>
         {{#with results}} 
         {{#if meetup}}
         <h3>Meetups</h3>
         <ul>
             {{#each meetup}}
-              <li><a href='{{this.url}}' target='_blank'>{{this.resource_name}}</a>
+              <li class='li-outer'><a href='{{this.url}}' target='_blank'>{{this.resource_name}}</a>
             <ul>
-                <li>{{this.resource_description}}</li>
+                <li class='li-inner'>{{this.resource_description}}</li>
             </ul>
             </li>
             {{/each}}
@@ -18,10 +18,10 @@
         <h3>Articles</h3>
         <ul>
             {{#each article}}
-            <li><a href='{{this.url}}' target='_blank'>
+            <li class='li-outer'><a href='{{this.url}}' target='_blank'>
                 {{this.resource_name}}</a>
                 <ul>
-                <li>{{this.resource_description}}</li>
+                <li class='li-inner'>{{this.resource_description}}</li>
             </ul>
             </li>
             {{/each}}
@@ -29,13 +29,13 @@
         {{/if}}
 
 {{#if [classroom course]}}
-        <h3>Classroom course</h3>
+        <h3>Classroom courses</h3>
         <ul>
             {{#each [classroom course]}}
-            <li><a href='{{this.url}}' target='_blank'>
+            <li class='li-outer'><a href='{{this.url}}' target='_blank'>
                 {{this.resource_name}}</a>
                 <ul>
-                <li>{{this.resource_description}}</li>
+                <li class='li-inner'>{{this.resource_description}}</li>
             </ul>
             </li>
             {{/each}}
@@ -43,13 +43,13 @@
         {{/if}}
 
 {{#if [online course]}}
-        <h3>Online course</h3>
+        <h3>Online courses</h3>
         <ul>
             {{#each [online course]}}
-            <li><a href='{{this.url}}' target='_blank'>
+            <li class='li-outer'><a href='{{this.url}}' target='_blank'>
                 {{this.resource_name}}</a>
                 <ul>
-                <li>{{this.resource_description}}</li>
+                <li class='li-inner'>{{this.resource_description}}</li>
             </ul>
             </li>
             {{/each}}
@@ -57,13 +57,13 @@
         {{/if}}
 
 {{#if mentor}}
-        <h3>Mentor</h3>
+        <h3>Mentors</h3>
         <ul>
             {{#each mentor}}
-            <li><a href='{{this.url}}' target='_blank'>
+            <li class='li-outer'><a href='{{this.url}}' target='_blank'>
                 {{this.resource_name}}</a>
                 <ul>
-                <li>{{this.resource_description}}</li>
+                <li class='li-inner'>{{this.resource_description}}</li>
             </ul>
             </li>
             {{/each}}
@@ -74,10 +74,10 @@
         <h3>Other</h3>
         <ul>
             {{#each others}}
-            <li><a href='{{this.url}}' target='_blank'>
+            <li class='li-outer'><a href='{{this.url}}' target='_blank'>
                 {{this.resource_name}}</a>
                 <ul>
-                <li>{{this.resource_description}}</li>
+                <li class='li-inner'>{{this.resource_description}}</li>
             </ul>
             </li>
             {{/each}}
@@ -91,7 +91,7 @@
 <section class='grid-row'>
     <div id='bottom-section' class='centered-column centered-content secondary-background thirtytwo-padding fixed-height-double-h1'>
         <form action='/background' class='centered-content'>
-            <button class="govuk-button">Complain!</button>
+            <button class="govuk-button">Start again</button>
         </form>
     </div>
 </section>
