@@ -596,6 +596,9 @@ body {
 h1 {
   font-size: 3.375rem; }
 
+h3 {
+  text-align: center; }
+
 progress[value] {
   appearance: none;
   -webkit-appearance: none;
@@ -622,6 +625,11 @@ progress {
 progress[value]::-moz-progress-bar {
   background-color: #FDC925;
   box-shadow: 0 2px 5px #8FA3AD inset; }
+
+textarea {
+  font-size: 1.5rem;
+  color: #444;
+  resize: none; }
 
 .full-viewport {
   min-height: 95vh;
@@ -742,6 +750,13 @@ progress[value]::-moz-progress-bar {
   bottom: 0;
   background: white; }
 
+.small-text {
+  font-size: 1.25rem; }
+
+#more-info-field {
+  width: 80%;
+  height: 60%; }
+
 .grid-row {
   clear: both;
   flex-wrap: wrap;
@@ -773,7 +788,7 @@ form {
 
 img {
   border-radius: 50%;
-  width: 75%;
+  width: 70%;
   max-width: 90%; }
 
 .fade-in {
