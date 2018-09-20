@@ -22,6 +22,8 @@ const getData = (bgArray, rscArray) => {
 
   console.log("DATAQUERY=", dataQuery);
 
+  console.log("Database URL=", process.env.DB_URL);
+
   return new Promise((resolve, reject) => {
     db.query(dataQuery)
       .then(res => resolve(res))

@@ -75,8 +75,8 @@ h1 {
     font-size: $heading-1;
 }
 
-h3 {
-    text-align: center;
+h2 {
+    font-size: $heading-2;
 }
 
 progress[value] {
@@ -94,6 +94,7 @@ progress[value]::-webkit-progress-bar {
 
 progress[value]::-webkit-progress-value {
     background-color: $accent-colour;
+    box-shadow: 0 2px 5px $accent-colour-dark inset;
 }
 
 progress {
@@ -115,6 +116,10 @@ textarea {
     font-size: $base-font-size;
     color: $heading-text-colour;
     resize: none;
+}
+
+a {
+    cursor: pointer;
 }
 
 // CLASSES
@@ -143,6 +148,7 @@ textarea {
 }
 
 .li-outer {
+    list-style-type: none;
     font-family: $body-font;
     color: $primary-text-colour;
     font-weight: $regular-font;
@@ -171,7 +177,7 @@ textarea {
 
 .centered-column {
     @include oGridCenter;
-    @include oGridColspan((default: 12, M: 8, L: 6));
+    @include oGridColspan((default: 12, M: 10, L: 8));
 }
 
 .centered-content {
@@ -183,7 +189,6 @@ textarea {
 .flex-col{
     flex-direction:column;
 }
-
 
 .centered-content-no-padding {
     display: flex;
@@ -202,8 +207,13 @@ textarea {
 .thirtytwo-padding {
     padding: 32px;
 }
+
 .padding-lft {
-    padding-left:64px;
+    padding-left: 42px;
+}
+
+.bottom-padding-lft {
+    padding-left: 54px;
 }
 
 .progressbar {
@@ -217,6 +227,15 @@ textarea {
 
 .small-text {
     font-size: $medium-font-size;
+}
+
+.hidden {
+    display: none;
+}
+
+.down-arrow-img {
+    height: $base-font-size;
+    width: $heading-1;
 }
 
 // IDS

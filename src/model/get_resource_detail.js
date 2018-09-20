@@ -9,7 +9,6 @@ const getResourceDetail = resourceId => {
 };
 
 module.exports = getResourceDetail;
-console.log("herehere");
 getResourceDetail(1)
   .then(res => console.log(res.rows))
   .catch(err => console.log(err));

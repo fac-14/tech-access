@@ -474,9 +474,9 @@
   border: 2px solid transparent;
   border-radius: 0;
   color: #0b0c0c;
-  background-color: #FFFF81;
-  -webkit-box-shadow: 0 2px 0 #ffff35;
-  box-shadow: 0 2px 0 #ffff35;
+  background-color: #FDC925;
+  -webkit-box-shadow: 0 2px 0 #d4a102;
+  box-shadow: 0 2px 0 #d4a102;
   text-align: center;
   vertical-align: top;
   cursor: pointer;
@@ -509,7 +509,7 @@
     padding: 0;
     border: 0; }
   .govuk-button:hover, .govuk-button:focus {
-    background-color: #ffff68; }
+    background-color: #fdc30c; }
   .govuk-button:active {
     top: 2px;
     -webkit-box-shadow: none;
@@ -530,11 +530,11 @@
 .govuk-button[disabled="disabled"],
 .govuk-button[disabled] {
   opacity: 0.5;
-  background: #FFFF81; }
+  background: #FDC925; }
   .govuk-button--disabled:hover,
   .govuk-button[disabled="disabled"]:hover,
   .govuk-button[disabled]:hover {
-    background-color: #FFFF81;
+    background-color: #FDC925;
     cursor: default; }
   .govuk-button--disabled:focus,
   .govuk-button[disabled="disabled"]:focus,
@@ -544,8 +544,8 @@
   .govuk-button[disabled="disabled"]:active,
   .govuk-button[disabled]:active {
     top: 0;
-    -webkit-box-shadow: 0 2px 0 #ffff35;
-    box-shadow: 0 2px 0 #ffff35; }
+    -webkit-box-shadow: 0 2px 0 #d4a102;
+    box-shadow: 0 2px 0 #d4a102; }
 
 .govuk-button--start {
   font-weight: 700;
@@ -596,8 +596,8 @@ body {
 h1 {
   font-size: 3.375rem; }
 
-h3 {
-  text-align: center; }
+h2 {
+  font-size: 2.25rem; }
 
 progress[value] {
   appearance: none;
@@ -611,7 +611,8 @@ progress[value]::-webkit-progress-bar {
   box-shadow: 0 2px 5px #8FA3AD inset; }
 
 progress[value]::-webkit-progress-value {
-  background-color: #FDC925; }
+  background-color: #FDC925;
+  box-shadow: 0 2px 5px #C8A415 inset; }
 
 progress {
   appearance: none;
@@ -630,6 +631,9 @@ textarea {
   font-size: 1.5rem;
   color: #444;
   resize: none; }
+
+a {
+  cursor: pointer; }
 
 .full-viewport {
   min-height: 95vh;
@@ -650,6 +654,7 @@ textarea {
   justify-content: space-between; }
 
 .li-outer {
+  list-style-type: none;
   font-family: "Source Sans Pro", sans-serif;
   color: #222;
   font-weight: 400;
@@ -701,6 +706,16 @@ textarea {
   @media (min-width: 46.25em) {
     .centered-column {
       display: block;
+      flex-basis: 83.3333333333%;
+      min-width: 83.3333333333%;
+      max-width: 83.3333333333%; } }
+  @media \0screen {
+    .centered-column {
+      display: block;
+      width: 83.3333333333%; } }
+  @media (min-width: 61.25em) {
+    .centered-column {
+      display: block;
       flex-basis: 66.6666666667%;
       min-width: 66.6666666667%;
       max-width: 66.6666666667%; } }
@@ -708,16 +723,6 @@ textarea {
     .centered-column {
       display: block;
       width: 66.6666666667%; } }
-  @media (min-width: 61.25em) {
-    .centered-column {
-      display: block;
-      flex-basis: 50%;
-      min-width: 50%;
-      max-width: 50%; } }
-  @media \0screen {
-    .centered-column {
-      display: block;
-      width: 50%; } }
 
 .centered-content {
   display: flex;
@@ -743,7 +748,10 @@ textarea {
   padding: 32px; }
 
 .padding-lft {
-  padding-left: 64px; }
+  padding-left: 42px; }
+
+.bottom-padding-lft {
+  padding-left: 54px; }
 
 .progressbar {
   position: fixed;
@@ -755,6 +763,13 @@ textarea {
 
 .small-text {
   font-size: 1.25rem; }
+
+.hidden {
+  display: none; }
+
+.down-arrow-img {
+  height: 1.5rem;
+  width: 3.375rem; }
 
 #more-info-field {
   width: 80%;

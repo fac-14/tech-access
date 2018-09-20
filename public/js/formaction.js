@@ -4,7 +4,6 @@ var resourceString = [];
 Object.keys(sessionStorage).forEach(i => {
   if (i.includes("-background")) {
   backgroundString.push(i.replace('-background', '').replace(" ", "%20"))  
-    console.log(i, "is background")
   } else if (i.includes("-resource")) {
     resourceString.push(i.replace ('-resource', '').replace(" ", "%20"))
   }
