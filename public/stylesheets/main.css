@@ -806,7 +806,7 @@ form {
 
 img {
   border-radius: 50%;
-  width: 70%;
+  max-height: 60vh;
   max-width: 90%; }
 
 .fade-in {

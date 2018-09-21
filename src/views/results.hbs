@@ -7,7 +7,7 @@
     <div class='centered-column secondary-background thirtytwo-padding flex-col padding-lft'>
         {{#with results}} 
         {{#if meetup}}
-        <h2 class="centered-content-no-padding padding-lft"><a id="meetup" onclick="hideMe()" tabindex="0">Meetups<img src="images/down-arrow.svg" class="down-arrow-img" alt="Down arrow to collapse section"></a></h2>
+        <h2 class="centered-content-no-padding padding-lft"><a id="meetup" onclick="hideMe(event)" tabindex="0">Meetups<img src="images/down-arrow.svg" class="down-arrow-img" alt="Down arrow to collapse section"></a></h2>
         <div id="meetup-results">
             <ul>
                 {{#each meetup}}
@@ -22,7 +22,7 @@
         {{/if}}
 
         {{#if article}}
-        <h2 class="centered-content-no-padding padding-lft"><a id="article" onclick="hideMe()" tabindex="0">Articles<img src="images/down-arrow.svg" class="down-arrow-img" alt="Down arrow to collapse section"></a></h2>
+        <h2 class="centered-content-no-padding padding-lft"><a id="article" onclick="hideMe(event)" tabindex="0">Articles<img src="images/down-arrow.svg" class="down-arrow-img" alt="Down arrow to collapse section"></a></h2>
         <div id="article-results">
             <ul>
                 {{#each article}}
@@ -38,7 +38,7 @@
         {{/if}}
 
     {{#if [classroom course]}}
-        <h2 class="centered-content-no-padding padding-lft"><a id="classroom" onclick="hideMe()" tabindex="0">Classroom courses<img src="images/down-arrow.svg" class="down-arrow-img" alt="Down arrow to collapse section"></a></h2>
+        <h2 class="centered-content-no-padding padding-lft"><a id="classroom" onclick="hideMe(event)" tabindex="0">Classroom courses<img src="images/down-arrow.svg" class="down-arrow-img" alt="Down arrow to collapse section"></a></h2>
         <div id="classroom-results">
             <ul>
                 {{#each [classroom course]}}
@@ -54,7 +54,7 @@
         {{/if}}
 
     {{#if [online course]}}
-        <h2 class="centered-content-no-padding padding-lft"><a id="online" onclick="hideMe()" tabindex="0">Online courses<img src="images/down-arrow.svg" class="down-arrow-img" alt="Down arrow to collapse section"></a></h2>
+        <h2 class="centered-content-no-padding padding-lft"><a id="online" onclick="hideMe(event)" tabindex="0">Online courses<img src="images/down-arrow.svg" class="down-arrow-img" alt="Down arrow to collapse section"></a></h2>
         <div id="online-results">
             <ul>
                 {{#each [online course]}}
@@ -70,7 +70,7 @@
         {{/if}}
 
     {{#if mentor}}
-        <h2 class="centered-content-no-padding padding-lft"><a id="people" onclick="hideMe()" tabindex="0">Inspirational people<img src="images/down-arrow.svg" class="down-arrow-img" alt="Down arrow to collapse section"></a></h2>
+        <h2 class="centered-content-no-padding padding-lft"><a id="people" onclick="hideMe(event)" tabindex="0">Inspirational people<img src="images/down-arrow.svg" class="down-arrow-img" alt="Down arrow to collapse section"></a></h2>
         <div id="people-results">
             <ul>
                 {{#each mentor}}
@@ -86,7 +86,7 @@
         {{/if}}  
 
     {{#if others}}
-        <h2 class="centered-content-no-padding padding-lft"><a id="other" onclick="hideMe()" tabindex="0">Other<img src="images/down-arrow.svg" class="down-arrow-img" alt="Down arrow to collapse section"></a></h2>
+        <h2 class="centered-content-no-padding padding-lft"><a id="other" onclick="hideMe(event)" tabindex="0">Other<img src="images/down-arrow.svg" class="down-arrow-img" alt="Down arrow to collapse section"></a></h2>
         <div id="other-results">
             <ul>
                 {{#each others}}

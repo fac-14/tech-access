@@ -272,7 +272,7 @@ img {
     border: {
         radius: $round-image;
     }
-    width: $small-image;
+    max-height: 60vh;
     max-width: 90%;
 }
 
