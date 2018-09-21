@@ -18,7 +18,7 @@ const getData = (bgArray, rscArray) => {
     dataQuery += ` OR resource.resource_type = '${rscArray[i].trim()}'`;
   }
 
-  dataQuery += ')'
+  dataQuery += ') ORDER BY resource.resource_id'
 
   console.log("DATAQUERY=", dataQuery);
 
