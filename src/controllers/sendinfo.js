@@ -13,7 +13,6 @@ exports.post = (req, response) => {
     console.log('resultArray', resultArray);
     const outArray = filterByType(resultArray);
    console.log('OUTPUT ARRAY', outArray);
-   //response.cookie('results', outArray);
    response.render('results', {
      results: outArray,
     layout: 'scrollable',
@@ -21,9 +20,6 @@ exports.post = (req, response) => {
     title: 'Results',
     pageInfo: 'Based on the checkboxes you have selected, here are your results. This is a work in progress - if you feel there aren\'t many resources that apply to you, please come back again later. We\'ll be adding more as we go long.',
   });
-    //response.redirect('/results');
-    //response.json({'results': outArray});
-    //response.send(outArray);
   })
   .catch(err => console.log(err));
 
