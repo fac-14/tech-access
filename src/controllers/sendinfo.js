@@ -33,6 +33,33 @@ exports.post = (req, response) => {
         return value.resource_type == mytype;
       })
     })
+    // Sort by number of direct tags and then by number of indirect tags
+        // Sort by direct(no of tags) then by indirect(no of tags)
+        types.forEach(type => {
+          // console.log('HERE TYPE=', type)
+          //sort within key meetup then online course ....
+          outArr[type].sort(function (a, b) {
+            // console.log('A.DIRECT.LENGTH+ A.NAME', a.direct.length, a.resource_name);
+            // console.log('B.DIRECT.LENGTH + B.NAME=', b.direct.length, b.resource_name);
+    
+            let A = a.direct.length;
+            let B = b.direct.length;
+            // return B - A;
+            if (A < B) return 1;
+            if (A > B) return -1;
+            //function to sort by indirect
+            else if (A == B) {
+              let  C= a.indirect.length;
+              let D = b.indirect.length;
+              if (C < D) return 1;
+              if (C > D) return -1;
+              else return 0;
+            }
+             // 
+    
+          });
+        })
+
     return outArr;
   }
    //to arrange repeated resource as {resource_id='1', resource_name='codebar', direct=['age','ethnicity'], indirect=['disability']},....
@@ -63,7 +90,7 @@ exports.post = (req, response) => {
         resultArrIndx++;
       }
       else if (resultArray[resultArrIndx - 1].resource_id == inArray[i].resource_id) {
-        if (inArray[i].demo_tag_relevance === 'direct') {
+        if (inArray[i].relevance === 'direct') {
            resultArray[resultArrIndx - 1].direct.push(inArray[i].tag_name);
         } else {
           resultArray[resultArrIndx - 1].indirect.push(inArray[i].tag_name);
