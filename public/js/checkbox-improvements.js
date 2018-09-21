@@ -18,3 +18,9 @@ function forceChecked(e){
         window.alert("Please select at least one item to receive your results")
     }
 }
+
+// Allow people to click on the label name to check or uncheck the checkbox
+document.querySelector(".govuk-checkboxes").addEventListener("click", function(e) {
+    if(e.target.nodeName === "LABEL"){
+	e.target.previousSibling.previousSibling.click()}
+})
